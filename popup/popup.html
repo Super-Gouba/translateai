@@ -7,117 +7,120 @@
   <link rel="stylesheet" href="popup.css">
 </head>
 <body>
-  <div class="container">
+  <div class="popup">
     <!-- 头部 -->
-    <header class="header">
-      <div class="logo">
-        <span class="logo-mark" aria-hidden="true">译</span>
-        <div class="logo-text">
-          <h1>TranslateAI</h1>
-          <span class="logo-sub">词库 · 大模型</span>
+    <header class="pp-header">
+      <div class="pp-id">
+        <span class="pp-avatar" aria-hidden="true">译</span>
+        <div class="pp-name">
+          <strong>TranslateAI</strong>
+          <span class="pp-sub">词库 · 大模型</span>
         </div>
       </div>
-      <button id="openOptions" class="settings-btn" title="设置" aria-label="打开设置">
-        <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <circle cx="12" cy="12" r="3"></circle>
-          <path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1A1.7 1.7 0 0 0 9 19.4a1.7 1.7 0 0 0-1.9.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.9 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1A1.7 1.7 0 0 0 4.6 9a1.7 1.7 0 0 0-.3-1.9l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.9.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.9-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.9V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"></path>
-        </svg>
-      </button>
+      <label class="pp-switch">
+        <span>划词翻译</span>
+        <span class="switch">
+          <input type="checkbox" id="hoverToggle">
+          <span class="slider"></span>
+        </span>
+      </label>
     </header>
 
-    <!-- 翻译区域 -->
-    <div class="translate-section">
-      <div class="input-group">
-        <textarea id="inputText" placeholder="输入要翻译的文本..." rows="3"></textarea>
-        <div class="lang-selectors">
-          <select id="sourceLang" class="lang-select">
-            <option value="auto" selected>自动检测</option>
-            <option value="en">English</option>
-            <option value="zh">中文</option>
-            <option value="ja">日本語</option>
-            <option value="ko">한국어</option>
-            <option value="ru">Русский</option>
-            <option value="ar">العربية</option>
-            <option value="fr">Français</option>
-            <option value="de">Deutsch</option>
-            <option value="es">Español</option>
-          </select>
-          <button class="swap-btn" id="swapBtn" title="交换语言" aria-label="交换语言">
-            <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M7 4 3 8l4 4"></path>
-              <path d="M3 8h13a4 4 0 0 1 0 8h-1"></path>
-              <path d="M17 20l4-4-4-4"></path>
-            </svg>
-          </button>
-          <select id="targetLang" class="lang-select">
-            <option value="zh" selected>中文</option>
-            <option value="en">English</option>
-            <option value="ja">日本語</option>
-            <option value="ko">한국어</option>
-            <option value="ru">Русский</option>
-            <option value="ar">العربية</option>
-            <option value="fr">Français</option>
-            <option value="de">Deutsch</option>
-            <option value="es">Español</option>
-            <option value="pt">Português</option>
-            <option value="it">Italiano</option>
-            <option value="th">ไทย</option>
-            <option value="vi">Tiếng Việt</option>
-            <option value="tr">Türkçe</option>
-            <option value="hi">हिन्दी</option>
-            <option value="id">Bahasa Indonesia</option>
-          </select>
-        </div>
-      </div>
-
-      <button id="translateBtn" class="translate-btn">
-        <span class="btn-text">翻译</span>
-        <span class="btn-loading" style="display:none;">
-          <span class="spinner"></span> 翻译中...
-        </span>
+    <!-- 语言对 -->
+    <div class="pair">
+      <select id="sourceLang" class="pill-select" aria-label="源语言">
+        <option value="auto" selected>自动检测</option>
+        <option value="en">English</option>
+        <option value="zh">中文</option>
+        <option value="ja">日本語</option>
+        <option value="ko">한국어</option>
+        <option value="ru">Русский</option>
+        <option value="ar">العربية</option>
+        <option value="fr">Français</option>
+        <option value="de">Deutsch</option>
+        <option value="es">Español</option>
+      </select>
+      <button class="pair-arrow" id="swapBtn" title="交换语言" aria-label="交换语言">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M4 12h16"></path>
+          <path d="m14 6 6 6-6 6"></path>
+        </svg>
       </button>
-
-      <!-- 翻译结果 -->
-      <div class="result-area" id="resultArea" style="display:none;">
-        <div class="result-header">
-          <span class="result-label">翻译结果</span>
-          <span class="result-source" id="resultSource"></span>
-        </div>
-        <p class="result-text" id="resultText"></p>
-        <button class="copy-btn" id="copyBtn">复制</button>
-      </div>
+      <select id="targetLang" class="pill-select" aria-label="目标语言">
+        <option value="zh" selected>中文</option>
+        <option value="en">English</option>
+        <option value="ja">日本語</option>
+        <option value="ko">한국어</option>
+        <option value="ru">Русский</option>
+        <option value="ar">العربية</option>
+        <option value="fr">Français</option>
+        <option value="de">Deutsch</option>
+        <option value="es">Español</option>
+        <option value="pt">Português</option>
+        <option value="it">Italiano</option>
+        <option value="th">ไทย</option>
+        <option value="vi">Tiếng Việt</option>
+        <option value="tr">Türkçe</option>
+        <option value="hi">हिन्दी</option>
+        <option value="id">Bahasa Indonesia</option>
+      </select>
     </div>
 
-    <!-- 词库信息 -->
-    <div class="dict-info">
-      <div class="dict-stat">
-        <span class="stat-label">词库</span>
-        <span class="stat-value" id="dictCount">0</span>
+    <!-- 输入 -->
+    <div class="input-card">
+      <textarea id="inputText" placeholder="输入或粘贴要翻译的文本…" rows="3"></textarea>
+    </div>
+
+    <!-- 主按钮 -->
+    <button id="translateBtn" class="cta">
+      <span class="btn-text">翻译</span>
+      <span class="btn-loading" style="display:none;">
+        <span class="spinner"></span> 翻译中…
+      </span>
+      <kbd class="cta-hint">Enter</kbd>
+    </button>
+
+    <!-- 翻译结果 -->
+    <div class="result-area" id="resultArea" style="display:none;">
+      <div class="result-header">
+        <span class="result-label">译文</span>
+        <span class="result-source" id="resultSource"></span>
       </div>
-      <div class="dict-stat">
-        <span class="stat-label">AI 状态</span>
-        <span class="stat-value" id="llmStatus">未配置</span>
-      </div>
+      <p class="result-text" id="resultText"></p>
+      <button class="copy-btn" id="copyBtn">复制</button>
     </div>
 
     <!-- 快捷操作 -->
     <div class="quick-actions">
-      <button id="translatePageBtn" class="quick-btn">
-        <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <button id="translatePageBtn" class="soft-btn">
+        <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"></path>
           <path d="M14 3v5h5"></path>
           <path d="M9 13h6M9 17h4"></path>
         </svg>
-        <span>翻译当前页</span>
+        翻译当前页
       </button>
-      <button id="toggleMode" class="quick-btn">
-        <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <button id="toggleMode" class="soft-btn">
+        <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <path d="M4 7h9M4 7l3-3M4 7l3 3"></path>
           <path d="M20 17h-9M20 17l-3-3M20 17l-3 3"></path>
         </svg>
         <span id="modeLabel">词库优先</span>
       </button>
     </div>
+
+    <!-- 底部 -->
+    <footer class="pp-footer">
+      <button id="openOptions" class="footer-link">
+        <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="3"></circle>
+          <path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9 2 2 0 1 1-2.8 2.8 1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.5 2 2 0 1 1-4 0 1.7 1.7 0 0 0-1-1.5 1.7 1.7 0 0 0-1.9.3 2 2 0 1 1-2.8-2.8 1.7 1.7 0 0 0 .3-1.9 1.7 1.7 0 0 0-1.5-1 2 2 0 1 1 0-4 1.7 1.7 0 0 0 1.5-1 1.7 1.7 0 0 0-.3-1.9 2 2 0 1 1 2.8-2.8 1.7 1.7 0 0 0 1.9.3 1.7 1.7 0 0 0 1-1.5 2 2 0 1 1 4 0 1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.9-.3 2 2 0 1 1 2.8 2.8 1.7 1.7 0 0 0-.3 1.9 1.7 1.7 0 0 0 1.5 1 2 2 0 1 1 0 4 1.7 1.7 0 0 0-1.5 1z"></path>
+        </svg>
+        设置
+      </button>
+      <span class="footer-stat">词库 <b id="dictCount">0</b></span>
+      <span class="footer-stat">AI <b id="llmStatus">未配置</b></span>
+    </footer>
   </div>
 
   <script src="popup.js"></script>

@@ -18,6 +18,7 @@ const $openOptions = document.getElementById('openOptions');
 const $translatePageBtn = document.getElementById('translatePageBtn');
 const $toggleMode = document.getElementById('toggleMode');
 const $modeLabel = document.getElementById('modeLabel');
+const $hoverToggle = document.getElementById('hoverToggle');
 
 // ===== 初始化 =====
 async function init() {
@@ -38,6 +39,9 @@ async function loadSettings() {
 
   if (settings.sourceLang) $sourceLang.value = settings.sourceLang;
   if (settings.targetLang) $targetLang.value = settings.targetLang;
+
+  $hoverToggle.checked = settings.hoverTranslation !== false;
+  $modeLabel.textContent = settings.llmPriority ? 'AI 优先' : '词库优先';
 }
 
 // ===== 加载词库统计 =====
@@ -62,6 +66,15 @@ function bindEvents() {
   $openOptions.addEventListener('click', openOptions);
   $translatePageBtn.addEventListener('click', translatePage);
   $toggleMode.addEventListener('click', togglePriority);
+
+  // 划词翻译开关
+  $hoverToggle.addEventListener('change', async () => {
+    const config = await chrome.storage.sync.get(['translateSettings']);
+    const settings = config.translateSettings || {};
+    await chrome.storage.sync.set({
+      translateSettings: { ...settings, hoverTranslation: $hoverToggle.checked }
+    });
+  });
 
   // 自动翻译输入框内容
   $inputText.addEventListener('keydown', (e) => {

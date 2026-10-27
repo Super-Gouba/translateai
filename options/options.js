@@ -68,6 +68,32 @@ async function init() {
   await loadSettings();
   await loadDictStats();
   bindEvents();
+  initNavSpy();
+}
+
+// ===== 侧边栏导航高亮 =====
+function initNavSpy() {
+  const navItems = Array.from(document.querySelectorAll('.nav-item'));
+  if (!navItems.length) return;
+
+  const setActive = (id) => {
+    navItems.forEach(a => a.classList.toggle('active', a.getAttribute('href') === `#${id}`));
+  };
+
+  const sections = navItems
+    .map(a => document.querySelector(a.getAttribute('href')))
+    .filter(Boolean);
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) setActive(entry.target.id);
+    });
+  }, { rootMargin: '-15% 0px -70% 0px' });
+
+  sections.forEach(section => observer.observe(section));
+  navItems.forEach(a => {
+    a.addEventListener('click', () => setActive(a.getAttribute('href').slice(1)));
+  });
 }
 
 // ===== 加载词库统计 =====

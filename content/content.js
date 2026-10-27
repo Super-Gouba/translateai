@@ -384,16 +384,15 @@ function showProgress(total) {
     bottom: 18px;
     left: 50%;
     transform: translateX(-50%);
-    background: #fffdf8;
-    color: #1b1813;
+    background: #ffffff;
+    color: #221f2e;
     padding: 9px 18px;
-    border: 1px solid #e5ddce;
-    border-radius: 12px;
+    border-radius: 999px;
     font-family: "Segoe UI Variable Text", "Microsoft YaHei UI", -apple-system, sans-serif;
     font-size: 12.5px;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.03em;
     z-index: 2147483647;
-    box-shadow: 0 6px 24px rgba(27, 24, 19, 0.16);
+    box-shadow: 0 2px 6px rgba(34, 31, 46, 0.06), 0 12px 32px rgba(34, 31, 46, 0.14);
   `;
   document.body.appendChild(el);
   return el;
@@ -438,11 +437,10 @@ function showPageTranslationStatus(targetLang, changed) {
     position: fixed;
     top: 14px;
     right: 14px;
-    background: #fffdf8;
-    color: #1b1813;
+    background: #ffffff;
+    color: #221f2e;
     padding: 10px 12px 10px 15px;
-    border: 1px solid #e5ddce;
-    border-radius: 12px;
+    border-radius: 14px;
     font-family: "Segoe UI Variable Text", "Microsoft YaHei UI", -apple-system, sans-serif;
     font-size: 12.5px;
     letter-spacing: 0.02em;
@@ -450,7 +448,7 @@ function showPageTranslationStatus(targetLang, changed) {
     display: flex;
     align-items: center;
     gap: 12px;
-    box-shadow: 0 6px 24px rgba(27, 24, 19, 0.16);
+    box-shadow: 0 2px 6px rgba(34, 31, 46, 0.06), 0 12px 32px rgba(34, 31, 46, 0.14);
   `;
 
   document.body.appendChild(banner);

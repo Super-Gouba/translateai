@@ -2,6 +2,12 @@
 
 一款支持**内置词库翻译**和**大模型 AI 翻译**的 Chrome 浏览器扩展。
 
+中文 | [English](README.en.md)
+
+## 截图
+
+截图待补充，拍摄要求与文件命名见 [screenshots/README.md](screenshots/README.md)。
+
 ## 功能特性
 
 - **划词翻译**：鼠标选中文字，自动弹出翻译提示框
@@ -119,12 +125,14 @@ translateai/
 │   ├── options.html        # 设置页面
 │   ├── options.css         # 设置样式
 │   └── options.js          # 设置逻辑
+├── screenshots/            # 截图与拍摄指引
 ├── icons/
 │   ├── icon16.png          # 16x16 图标
 │   ├── icon32.png          # 32x32 图标
 │   ├── icon48.png          # 48x48 图标
 │   └── icon128.png         # 128x128 图标
-└── README.md               # 本文档
+├── README.md               # 中文文档（本文档）
+└── README.en.md            # 英文文档
 ```
 
 ## 技术栈

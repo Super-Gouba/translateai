@@ -99,7 +99,7 @@ async function handleTranslate() {
 
   $translateBtn.disabled = true;
   $translateBtn.querySelector('.btn-text').style.display = 'none';
-  $translateBtn.querySelector('.btn-loading').style.display = 'inline';
+  $translateBtn.querySelector('.btn-loading').style.display = 'inline-flex';
 
   try {
     const response = await chrome.runtime.sendMessage({

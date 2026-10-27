@@ -381,16 +381,19 @@ function showProgress(total) {
   el.textContent = `翻译中 0 / ${total}`;
   el.style.cssText = `
     position: fixed;
-    bottom: 16px;
+    bottom: 18px;
     left: 50%;
     transform: translateX(-50%);
-    background: #1e1e2e;
-    color: #cdd6f4;
-    padding: 8px 16px;
-    border-radius: 20px;
-    font-size: 13px;
+    background: #fffdf8;
+    color: #1b1813;
+    padding: 9px 18px;
+    border: 1px solid #e5ddce;
+    border-radius: 12px;
+    font-family: "Segoe UI Variable Text", "Microsoft YaHei UI", -apple-system, sans-serif;
+    font-size: 12.5px;
+    letter-spacing: 0.04em;
     z-index: 2147483647;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+    box-shadow: 0 6px 24px rgba(27, 24, 19, 0.16);
   `;
   document.body.appendChild(el);
   return el;
@@ -433,18 +436,21 @@ function showPageTranslationStatus(targetLang, changed) {
   `;
   banner.style.cssText = `
     position: fixed;
-    top: 10px;
-    right: 10px;
-    background: #4CAF50;
-    color: white;
-    padding: 8px 16px;
-    border-radius: 4px;
-    font-size: 14px;
+    top: 14px;
+    right: 14px;
+    background: #fffdf8;
+    color: #1b1813;
+    padding: 10px 12px 10px 15px;
+    border: 1px solid #e5ddce;
+    border-radius: 12px;
+    font-family: "Segoe UI Variable Text", "Microsoft YaHei UI", -apple-system, sans-serif;
+    font-size: 12.5px;
+    letter-spacing: 0.02em;
     z-index: 999999;
     display: flex;
     align-items: center;
-    gap: 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    gap: 12px;
+    box-shadow: 0 6px 24px rgba(27, 24, 19, 0.16);
   `;
 
   document.body.appendChild(banner);

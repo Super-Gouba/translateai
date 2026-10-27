@@ -11,10 +11,18 @@
     <!-- 头部 -->
     <header class="header">
       <div class="logo">
-        <span class="logo-icon">⚡</span>
-        <h1>TranslateAI</h1>
+        <span class="logo-mark" aria-hidden="true">译</span>
+        <div class="logo-text">
+          <h1>TranslateAI</h1>
+          <span class="logo-sub">词库 · 大模型</span>
+        </div>
       </div>
-      <button id="openOptions" class="settings-btn" title="设置">⚙️</button>
+      <button id="openOptions" class="settings-btn" title="设置" aria-label="打开设置">
+        <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="3"></circle>
+          <path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1A1.7 1.7 0 0 0 9 19.4a1.7 1.7 0 0 0-1.9.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.9 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1A1.7 1.7 0 0 0 4.6 9a1.7 1.7 0 0 0-.3-1.9l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.9.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.9-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.9V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"></path>
+        </svg>
+      </button>
     </header>
 
     <!-- 翻译区域 -->
@@ -34,7 +42,13 @@
             <option value="de">Deutsch</option>
             <option value="es">Español</option>
           </select>
-          <span class="swap-btn" id="swapBtn" title="交换语言">⇄</span>
+          <button class="swap-btn" id="swapBtn" title="交换语言" aria-label="交换语言">
+            <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M7 4 3 8l4 4"></path>
+              <path d="M3 8h13a4 4 0 0 1 0 8h-1"></path>
+              <path d="M17 20l4-4-4-4"></path>
+            </svg>
+          </button>
           <select id="targetLang" class="lang-select">
             <option value="zh" selected>中文</option>
             <option value="en">English</option>
@@ -89,11 +103,18 @@
     <!-- 快捷操作 -->
     <div class="quick-actions">
       <button id="translatePageBtn" class="quick-btn">
-        <span class="icon">📄</span>
+        <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"></path>
+          <path d="M14 3v5h5"></path>
+          <path d="M9 13h6M9 17h4"></path>
+        </svg>
         <span>翻译当前页</span>
       </button>
       <button id="toggleMode" class="quick-btn">
-        <span class="icon">🔄</span>
+        <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M4 7h9M4 7l3-3M4 7l3 3"></path>
+          <path d="M20 17h-9M20 17l-3-3M20 17l-3 3"></path>
+        </svg>
         <span id="modeLabel">词库优先</span>
       </button>
     </div>

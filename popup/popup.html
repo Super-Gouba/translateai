@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TranslateAI</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <!-- 头部 -->
+    <header class="header">
+      <div class="logo">
+        <span class="logo-icon">⚡</span>
+        <h1>TranslateAI</h1>
+      </div>
+      <button id="openOptions" class="settings-btn" title="设置">⚙️</button>
+    </header>
+
+    <!-- 翻译区域 -->
+    <div class="translate-section">
+      <div class="input-group">
+        <textarea id="inputText" placeholder="输入要翻译的文本..." rows="3"></textarea>
+        <div class="lang-selectors">
+          <select id="sourceLang" class="lang-select">
+            <option value="auto" selected>自动检测</option>
+            <option value="en">English</option>
+            <option value="zh">中文</option>
+            <option value="ja">日本語</option>
+            <option value="ko">한국어</option>
+            <option value="ru">Русский</option>
+            <option value="ar">العربية</option>
+            <option value="fr">Français</option>
+            <option value="de">Deutsch</option>
+            <option value="es">Español</option>
+          </select>
+          <span class="swap-btn" id="swapBtn" title="交换语言">⇄</span>
+          <select id="targetLang" class="lang-select">
+            <option value="zh" selected>中文</option>
+            <option value="en">English</option>
+            <option value="ja">日本語</option>
+            <option value="ko">한국어</option>
+            <option value="ru">Русский</option>
+            <option value="ar">العربية</option>
+            <option value="fr">Français</option>
+            <option value="de">Deutsch</option>
+            <option value="es">Español</option>
+            <option value="pt">Português</option>
+            <option value="it">Italiano</option>
+            <option value="th">ไทย</option>
+            <option value="vi">Tiếng Việt</option>
+            <option value="tr">Türkçe</option>
+            <option value="hi">हिन्दी</option>
+            <option value="id">Bahasa Indonesia</option>
+          </select>
+        </div>
+      </div>
+
+      <button id="translateBtn" class="translate-btn">
+        <span class="btn-text">翻译</span>
+        <span class="btn-loading" style="display:none;">
+          <span class="spinner"></span> 翻译中...
+        </span>
+      </button>
+
+      <!-- 翻译结果 -->
+      <div class="result-area" id="resultArea" style="display:none;">
+        <div class="result-header">
+          <span class="result-label">翻译结果</span>
+          <span class="result-source" id="resultSource"></span>
+        </div>
+        <p class="result-text" id="resultText"></p>
+        <button class="copy-btn" id="copyBtn">复制</button>
+      </div>
+    </div>
+
+    <!-- 词库信息 -->
+    <div class="dict-info">
+      <div class="dict-stat">
+        <span class="stat-label">词库</span>
+        <span class="stat-value" id="dictCount">0</span>
+      </div>
+      <div class="dict-stat">
+        <span class="stat-label">AI 状态</span>
+        <span class="stat-value" id="llmStatus">未配置</span>
+      </div>
+    </div>
+
+    <!-- 快捷操作 -->
+    <div class="quick-actions">
+      <button id="translatePageBtn" class="quick-btn">
+        <span class="icon">📄</span>
+        <span>翻译当前页</span>
+      </button>
+      <button id="toggleMode" class="quick-btn">
+        <span class="icon">🔄</span>
+        <span id="modeLabel">词库优先</span>
+      </button>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

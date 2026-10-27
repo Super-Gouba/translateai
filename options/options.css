@@ -1,0 +1,389 @@
+/**
+ * TranslateAI - Options Page Styles
+ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 键盘可见焦点 */
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 2px solid #667eea;
+  outline-offset: 2px;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #1a1a2e;
+  color: #e0e0e0;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.options-container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* ===== 头部 ===== */
+.options-header {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.header-content {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-icon {
+  font-size: 28px;
+}
+
+.options-header h1 {
+  font-size: 24px;
+  font-weight: 600;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ===== 卡片 ===== */
+.card {
+  background: #16162a;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 20px;
+  border: 1px solid #2a2a4a;
+}
+
+.card-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-desc {
+  font-size: 13px;
+  color: #888;
+  margin-bottom: 16px;
+}
+
+/* ===== 表单 ===== */
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group:last-child {
+  margin-bottom: 0;
+}
+
+.form-label {
+  display: block;
+  font-size: 13px;
+  color: #aaa;
+  margin-bottom: 6px;
+}
+
+.form-control {
+  width: 100%;
+  background: #1e1e38;
+  border: 1px solid #2a2a4a;
+  border-radius: 6px;
+  padding: 10px 12px;
+  color: #e0e0e0;
+  font-size: 14px;
+  transition: border-color 0.2s;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.form-hint {
+  font-size: 11px;
+  color: #666;
+  margin-top: 4px;
+}
+
+/* ===== 复选框 ===== */
+.checkbox-group {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.checkbox-label input {
+  width: 16px;
+  height: 16px;
+  accent-color: #667eea;
+  cursor: pointer;
+}
+
+/* ===== 开关 ===== */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 24px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #2a2a4a;
+  border-radius: 24px;
+  transition: 0.3s;
+}
+
+.slider::before {
+  content: '';
+  position: absolute;
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background: #fff;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.switch input:checked + .slider {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+.switch input:checked + .slider::before {
+  transform: translateX(20px);
+}
+
+/* ===== 按钮 ===== */
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-weight: 500;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background: #2a2a4a;
+  color: #e0e0e0;
+}
+
+.btn-secondary:hover {
+  background: #3a3a5a;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid #667eea;
+  color: #667eea;
+}
+
+.btn-outline:hover {
+  background: rgba(102, 126, 234, 0.1);
+}
+
+.btn-danger {
+  background: #e74c3c;
+  color: #fff;
+}
+
+.btn-danger:hover {
+  opacity: 0.9;
+}
+
+.btn-group {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+/* ===== LLM 配置区 ===== */
+.llm-config {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #2a2a4a;
+}
+
+/* ===== 服务商预设 ===== */
+.preset-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.preset-btn {
+  background: #1e1e38;
+  border: 1px solid #2a2a4a;
+  border-radius: 6px;
+  padding: 7px 14px;
+  color: #bbb;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.preset-btn:hover {
+  border-color: #667eea;
+  color: #fff;
+}
+
+.preset-btn.active {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  border-color: transparent;
+  color: #fff;
+}
+
+/* ===== 词库统计 ===== */
+.dict-preview {
+  margin-top: 20px;
+}
+
+.dict-preview h3 {
+  font-size: 14px;
+  color: #aaa;
+  margin-bottom: 12px;
+}
+
+.dict-stats {
+  display: flex;
+  gap: 20px;
+}
+
+.stat-item {
+  flex: 1;
+  background: #1e1e38;
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+}
+
+.stat-number {
+  display: block;
+  font-size: 24px;
+  font-weight: 600;
+  color: #667eea;
+}
+
+.stat-name {
+  display: block;
+  font-size: 12px;
+  color: #888;
+  margin-top: 4px;
+}
+
+/* ===== 快捷键 ===== */
+.shortcut-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.shortcut-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  background: #1e1e38;
+  border-radius: 8px;
+}
+
+.shortcut-key {
+  font-size: 13px;
+  color: #888;
+  background: #2a2a4a;
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+
+/* ===== 测试结果 ===== */
+.test-result {
+  margin-top: 16px;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  display: none;
+}
+
+.test-result.success {
+  background: rgba(46, 204, 113, 0.1);
+  color: #2ecc71;
+  display: block;
+}
+
+.test-result.error {
+  background: rgba(231, 76, 60, 0.1);
+  color: #e74c3c;
+  display: block;
+}
+
+/* ===== 底部 ===== */
+.options-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 30px;
+  padding: 20px 0;
+}
+
+.save-status {
+  font-size: 13px;
+  color: #2ecc71;
+}
+
+/* ===== 响应式 ===== */
+@media (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+
+  .card {
+    padding: 16px;
+  }
+
+  .dict-stats {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

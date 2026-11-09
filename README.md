@@ -4,10 +4,6 @@
 
 中文 | [English](README.en.md)
 
-## 截图
-
-截图待补充，拍摄要求与文件命名见 [screenshots/README.md](screenshots/README.md)。
-
 ## 功能特性
 
 - **划词翻译**：鼠标选中文字，自动弹出翻译提示框
@@ -26,14 +22,14 @@
 1. 打开 Chrome 浏览器，地址栏输入 `chrome://extensions/`
 2. 右上角打开「开发者模式」开关
 3. 点击左上角「加载已解压的扩展程序」
-4. 选择本插件目录（`temp_20261027_01`）
-5. 插件即安装成功，工具栏会出现 ⚡ 图标
+4. 选择解压后的项目目录
+5. 插件即安装成功，工具栏会出现 TranslateAI 图标
 
 ### 2. 打包成 CRX（可选）
 
 ```bash
 # 在扩展目录中执行
-chrome --pack-extension=C:\path\to\temp_20261027_01 --pack-extension-key=your_key.pem
+chrome --pack-extension=.\translateai --pack-extension-key=your_key.pem
 ```
 
 生成 `.crx` 文件后，可直接拖拽到 Chrome 扩展页面安装。
@@ -125,7 +121,6 @@ translateai/
 │   ├── options.html        # 设置页面
 │   ├── options.css         # 设置样式
 │   └── options.js          # 设置逻辑
-├── screenshots/            # 截图与拍摄指引
 ├── icons/
 │   ├── icon16.png          # 16x16 图标
 │   ├── icon32.png          # 32x32 图标

@@ -15,10 +15,6 @@ A Chrome extension that translates with a **built-in offline dictionary** first,
 - **Automatic source detection** — Detects Chinese / Japanese / Korean / Russian / Arabic / Thai by script, and skips content that is already in the target language
 - **Bidirectional** — Chinese↔English with a one-click language swap
 
-## Screenshots
-
-Screenshots are pending. See [screenshots/README.md](screenshots/README.md) for the shot list and capture guidelines.
-
 ## Installation
 
 ### 1. Load as an unpacked extension (recommended)
@@ -27,12 +23,12 @@ Screenshots are pending. See [screenshots/README.md](screenshots/README.md) for 
 2. Enable **Developer mode** in the top-right corner
 3. Click **Load unpacked**
 4. Select this project folder
-5. The ⚡ icon appears in the toolbar — you're done
+5. The TranslateAI icon appears in the toolbar — you're done
 
 ### 2. Package as CRX (optional)
 
 ```bash
-chrome --pack-extension=C:\path\to\translateai --pack-extension-key=your_key.pem
+chrome --pack-extension=.\translateai --pack-extension-key=your_key.pem
 ```
 
 Drag the generated `.crx` file into the extensions page to install.
@@ -124,7 +120,6 @@ translateai/
 │   ├── options.html        # Settings page
 │   ├── options.css         # Settings styles
 │   └── options.js          # Settings logic
-├── screenshots/            # Screenshots and capture guidelines
 ├── icons/
 │   ├── icon16.png
 │   ├── icon32.png

@@ -42,7 +42,7 @@ chrome --pack-extension=.\translateai --pack-extension-key=your_key.pem
 3. 结果标注来源：`词库` 或 `AI`
 
 ### 弹窗翻译
-1. 点击工具栏 ⚡ 图标打开翻译面板
+1. 点击工具栏的 TranslateAI 图标打开翻译面板
 2. 输入或粘贴要翻译的文本
 3. 选择源语言和目标语言
 4. 点击「翻译」或按 Enter 键

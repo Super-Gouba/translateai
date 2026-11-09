@@ -41,7 +41,7 @@ Drag the generated `.crx` file into the extensions page to install.
 3. The card is tagged with its source: `Dictionary` or `AI`
 
 ### Popup translation
-1. Click the ⚡ toolbar icon
+1. Click the TranslateAI toolbar icon
 2. Type or paste the text
 3. Pick the target language (source stays on auto-detect)
 4. Click **Translate** or press Enter

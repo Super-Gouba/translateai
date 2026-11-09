@@ -4,6 +4,24 @@ A Chrome extension that translates with a **built-in offline dictionary** first,
 
 [中文文档](README.md) | English
 
+## Screenshots
+
+**Select-to-translate** — Select a word and the card appears, tagged with its source (`Dictionary` or `AI`)
+
+<img src="screenshots/01-tooltip.png" width="620" alt="Select-to-translate">
+
+**Popup translation** — Click the toolbar icon, type, press Enter
+
+<img src="screenshots/02-popup.png" width="340" alt="Popup translation">
+
+**Settings** — Grouped sidebar navigation; dictionary first by default, add an LLM when you need more accuracy
+
+<img src="screenshots/03-options.png" width="720" alt="Settings">
+
+**Whole-page translation** — One right-click translates the page; undo from the banner
+
+<img src="screenshots/04-page-translate.png" width="620" alt="Whole-page translation">
+
 ## Features
 
 - **Select-to-translate** — Select any text on a page and a translation card pops up automatically
@@ -120,6 +138,7 @@ translateai/
 │   ├── options.html        # Settings page
 │   ├── options.css         # Settings styles
 │   └── options.js          # Settings logic
+├── screenshots/            # README screenshots
 ├── icons/
 │   ├── icon16.png
 │   ├── icon32.png

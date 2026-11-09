@@ -4,6 +4,24 @@
 
 中文 | [English](README.en.md)
 
+## 截图
+
+**划词翻译**：选中单词即弹出译文卡片，右上角标注来源是「词库」还是「AI」
+
+<img src="screenshots/01-tooltip.png" width="620" alt="划词翻译">
+
+**弹窗翻译**：点击工具栏图标，输入文本后按 Enter 翻译
+
+<img src="screenshots/02-popup.png" width="340" alt="弹窗翻译">
+
+**设置页**：左侧导航分组，默认词库优先，需要更精准时再接入大模型
+
+<img src="screenshots/03-options.png" width="720" alt="设置页">
+
+**整页翻译**：右键一键翻译当前页面，右上角可随时撤销
+
+<img src="screenshots/04-page-translate.png" width="620" alt="整页翻译">
+
 ## 功能特性
 
 - **划词翻译**：鼠标选中文字，自动弹出翻译提示框
@@ -121,6 +139,7 @@ translateai/
 │   ├── options.html        # 设置页面
 │   ├── options.css         # 设置样式
 │   └── options.js          # 设置逻辑
+├── screenshots/            # README 截图
 ├── icons/
 │   ├── icon16.png          # 16x16 图标
 │   ├── icon32.png          # 32x32 图标
